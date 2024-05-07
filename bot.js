@@ -19,7 +19,7 @@
 
 */
 
-const { Client, GatewayIntentBits } = require("discord.js");
+const { Client, GatewayIntentBit, Partials } = require("discord.js");
 const config = require("./config.js");
 const fs = require("fs");
 const path = require('path');
@@ -27,9 +27,17 @@ const { printWatermark } = require('./util/pw');
 const { initializePlayer } = require('./player');
 
 const client = new Client({
-    intents: Object.keys(GatewayIntentBits).map((a) => {
-        return GatewayIntentBits[a];
-    }),
+  partials: [
+    Partials.Channel, 
+    Partials.GuildMember, 
+    Partials.User, 
+  ],
+  intents: [
+    GatewayIntentBits.Guilds, 
+    GatewayIntentBits.GuildMembers, 
+    GatewayIntentBits.GuildIntegrations, 
+    GatewayIntentBits.GuildVoiceStates, 
+  ],
 });
 
 client.config = config;
