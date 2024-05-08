@@ -25,9 +25,9 @@ const { queueNames } = require("./commands/play");
 function initializePlayer(client) {
     const nodes = [
         {
-            host: "jirayu-lavalink.rlss.in.th",
-            password: "MKFnL8srZTuS47CwQ6fjVh",
-            port: 2333,
+            host: "212.192.29.91",
+            password: "reedrouxv4lavalink",
+            port: 25529,
             secure: false
         },
     ];
